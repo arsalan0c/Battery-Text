@@ -6,7 +6,7 @@
 
 # IMPORTANT: Hashtags with letters (A-D) denote points where stuff has to be changed by you
 
-# echo YOUR_COMPUTER_PASSWORD | sudo -S pmset repeat wake MTWRFSU hh:mm:ss --- TO AUTOMATE THE RUNINNG OF THIS PROGRAM: UNCOMMENT THIS COMMAND, CHANGE THE TIME TO YOUR PREFERRED TIME (in 24H format) AND USE IT WITH A .plist FILE 
+# echo YOUR_COMPUTER_PASSWORD | sudo -S pmset repeat wake MTWRFSU hh:mm:ss --- TO AUTOMATE THE RUNINNG OF THIS PROGRAM: UNCOMMENT THIS COMMAND, CHANGE THE TIME TO YOUR PREFERRED RUN TIME (in 24H format) AND USE IT WITH A .plist FILE 
 
 
 ###
