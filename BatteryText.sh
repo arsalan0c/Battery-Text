@@ -48,7 +48,7 @@ function noRun {
   
   if [ "$charging" == "Yes" ] 
   then
-  	break # Stop program if mac is charging. Needs to be manually run again (if wanted)
+  	break # Stop program if mac is charging. Program needs to be manually run again (if wanted)
 
   elif [ "$using" -le 60 ] # Idle time threshold is set to one minute
   then 
