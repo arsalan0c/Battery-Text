@@ -1,9 +1,9 @@
 # Battery-Text
 Program that uses iMessage to inform you, on your iPhone, that your mac's battery is low
 
-Step 1: In BatteryText.sh, look for code that marked by comments with a capitalized letter (A-C) in thefollowing functions: "wifi", "main" and "exitSet"
+Step 1: In BatteryText.sh, look for code that marked by comments with a capitalized letter (A-C) in the following functions: "wifi", "main" and "exitSet"
 
-Step 2: Edit it as instructed in the comments
+Step 2: Edit the code as instructed in the comment
 
 Step 3: In autotext1.scpt and autotext2.scpt, edit them with your iMessage email
 
