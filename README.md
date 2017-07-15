@@ -24,7 +24,7 @@ Optional: Schedule for the program to run automatically by using a .plist file
 	- exit if your mac is being charged
 	- sleep for 30 minutes if your idle time is <= 1 minute
 	- attempt to connect to a preferred wifi network of yours, if it isn't already
-	- only send a maximum of 2 texts total, one at each predetermined battery percentage threshold
+	- only send a maximum of 2 texts total, one at each predetermined battery percentage threshold (20% & 15%)
 	- once the first threshold has been reached and the text sent, instruct your mac to sleep for 30 minutes before checking for the second threshold
 	- on start, instruct your mac's sleep to be set to never to ensure the running of the program
 	- on start, instruct your mac display to sleep its display to conserve battery
