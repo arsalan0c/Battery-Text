@@ -40,19 +40,19 @@ function wifi {
 
 function noRun {
   
-  # Check mac's idle time	
+  # Check mac's idle time 
   using=$(/usr/sbin/ioreg -c IOHIDSystem | /usr/bin/awk '/HIDIdleTime/ {print int($NF/1000000000); exit}')
   # Check if mac is charging
   charging=$(system_profiler SPPowerDataType | grep "Connected" | awk '{ print substr( $0, length($0) - 2, length($0) ) }') # Getting 0th element and printing last 3 characters
   
   if [ "$charging" == "Yes" ] 
   then
-  	exitSet # Stop program if mac is charging. Program needs to be manually run again (if wanted)
+    exitSet # Stop program if mac is charging. Program needs to be manually run again (if wanted)
   
   elif [ "$using" -le 60 ] # Idle time threshold is set to one minute
   then 
-  	sleep 1800 # Sleep program and check again in 30 minutes if mac was used <= a minute ago
-    continue 	
+    sleep 1800 # Sleep program and check again in 30 minutes if mac was used <= a minute ago
+    continue  
   fi
 
 }
@@ -73,7 +73,7 @@ function text {
 
   if [ $count -ge 2 ] 
   then
-  	exitSet # Stop program once 2 texts have been sent, 1 when battery reaches value1 and the other when battery reaches value2
+    exitSet # Stop program once 2 texts have been sent, 1 when battery reaches value1 and the other when battery reaches value2
 
   # Execution for when battery percentage is >value2 and <=value1. Executes only once.
   elif [ "$battPercentage" -le $value1 ] && [ $count -lt 1 ]
