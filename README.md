@@ -1,6 +1,7 @@
 # Battery-Text
 Program that uses iMessage to inform you, on your iPhone, that your mac's battery is low
 
+
 Step 1: In BatteryText.sh, look for code that marked by comments with a capitalized letter (A-C) in the following functions: "wifi", "main" and "exitSet"
 
 Step 2: Edit the code as instructed in the comment
@@ -13,9 +14,11 @@ Step 5: Make the Bash file excecutable by entering the following in terminal: su
 
 Step 6: Run the file like so: ./BatteryText.sh
 
+
 Optional: Use the Platypus tool to make the program into a .app
 
 Optional: Schedule for the program to run automatically by using a .plist file
+
 
 * By default the program will:
 	- exit if your mac is being charged
