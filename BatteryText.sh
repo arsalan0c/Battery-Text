@@ -15,7 +15,7 @@
 
 function wifi {
 
-  # B - enter the details of your preferred wi-fi
+  # A - enter the details of your preferred wi-fi
   wifiOne=YOUR_WIFI_SSID # ( No space after '=')
   passOne=YOUR_WIFI_PASSWORD # (No space after '=')
 
@@ -101,7 +101,7 @@ function text {
 
 function main {
 
-  # A Your password is necessary to change the sleep setting to ensure that this program keeps running
+  # B Your password is necessary to change the sleep setting to ensure that this program keeps running
   echo YOUR_COMPUTER_PASSWORD | sudo -S systemsetup -setcomputersleep Never
 
   # Sleep just the display, to conserve battery
