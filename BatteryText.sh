@@ -16,7 +16,7 @@
 function wifi {
 
   # B - enter the details of your preferred wi-fi
-  wifiOne=YOUR_WIFI_SSID #( No space after '=')
+  wifiOne=YOUR_WIFI_SSID # ( No space after '=')
   passOne=YOUR_WIFI_PASSWORD # (No space after '=')
 
   # Check if it is already connected
@@ -24,8 +24,7 @@ function wifi {
 
   if [ "$connected" != "$wifiOne" ] # Not currently connected to the preferred wifi
   then
-    # Attempt primary wi-fi
-    connectOne=$(networksetup -setairportnetwork en0 $wifiOne $passOne)
+    connectOne=$(networksetup -setairportnetwork en0 $wifiOne $passOne) # Attempt primary wi-fi
     if [ "$connectOne" != "" ] # Primary wi-fi unsuccessful
     then
       sleep 600 # Wifi attempt unsuccessful, try again in 10 minutes
@@ -48,7 +47,7 @@ function noRun {
   
   if [ "$charging" == "Yes" ] 
   then
-  	break # Stop program if mac is charging. Needs to be manually run again (if wanted)
+  	exitSet # Stop program if mac is charging. Needs to be manually run again (if wanted)
 
   elif [ "$using" -le 60 ] # Idle time threshold is set to one minute
   then 
@@ -72,10 +71,9 @@ function text {
   # Threshold 2 for battery percentage value 
   value2=15
 
-  # Stop program once 2 texts have been sent, 1 when battery reaches value1 and the other when battery reaches value2
   if [ $count -ge 2 ] 
   then
-  	break
+  	exitSet # Stop program once 2 texts have been sent, 1 when battery reaches value1 and the other when battery reaches value2
 
   # Execution for when battery percentage is >value2 and <=value1. Executes only once.
   elif [ "$battPercentage" -le $value1 ] && [ $count -lt 1 ]
@@ -89,7 +87,7 @@ function text {
   then
     osascript autotext2.scpt # Apple script is run to send text
     count=$((count+1)) # Variable is incremented to prevent continuous texts
-    break # Exit while loop to end program once second battery threshold has been reached
+    exitSet # Exit program once second battery threshold has been reached
     
   else
     sleep 900 # Runs loop after 15 minutes to check again if battery has reached value1/value2 %
@@ -122,12 +120,25 @@ function main {
 
   done
 
+}
+
+###
+# STUFF TO DO ON EXIT
+###
+
+function exitSet {
+
   # C - At the end: Remove the exclamation marks and replace the text with a number. Your password is necessary to revert to your preferred sleep setting.
   echo YOUR_COMPUTER_PASSWORD | sudo -S systemsetup -setcomputersleep !!!SET_TO_YOUR_PREFERRED_NUMBER_IN_MINUTES(example: 10)!!!
 
   killall Messages
 
-  # Put system to sleep to conserve battery
+  if [ "$using" -le 60 ]
+  then
+    exit
+  fi
+
+  # Put system to sleep to conserve battery (only if mac not being used)
   pmset sleepnow
 
   exit
@@ -135,9 +146,6 @@ function main {
 }
 
 main
-
-
-
 
 
 
