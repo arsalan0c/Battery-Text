@@ -6,7 +6,7 @@
 
 # IMPORTANT: Hashtags with letters (A-D) denote points where stuff has to be changed by you
 
-# echo YOUR_COMPUTER_PASSWORD | sudo -S pmset repeat wake MTWRFSU hh:mm:ss --- TO AUTOMATE THE RUNINNG OF THIS PROGRAM: UNCOMMENT THIS COMMAND, CHANGE THE TIME TO YOUR PREFERRED TIME (in 24H format) AND USE IT WITH A .plist FILE 
+# echo YOUR_COMPUTER_PASSWORD | sudo -S pmset repeat wake MTWRFSU hh:mm:ss --- TO AUTOMATE THE RUNINNG OF THIS PROGRAM: UNCOMMENT THIS COMMAND, CHANGE THE TIME TO YOUR PREFERRED RUN TIME (in 24H format) AND USE IT WITH A .plist FILE 
 
 
 ###
@@ -47,7 +47,11 @@ function noRun {
   
   if [ "$charging" == "Yes" ] 
   then
+<<<<<<< HEAD
   	exitSet # Stop program if mac is charging. Needs to be manually run again (if wanted)
+=======
+  	break # Stop program if mac is charging. Program needs to be manually run again (if wanted)
+>>>>>>> 9c2785b83b7a4450de71839e8a2146593848e22d
 
   elif [ "$using" -le 60 ] # Idle time threshold is set to one minute
   then 
