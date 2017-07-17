@@ -1,18 +1,27 @@
 # Battery-Text
-Program that uses iMessage to inform you, on your iPhone, that your mac's battery is low. Your mac iMessages you as soon as its battery is low. As such, you can receive the message on your iPhone and plan to deal with it accordingly
+Program that uses iMessage to inform you, on your iPhone, that your mac's battery is low. 
 
-Intended use-cases:
+Problem being solved:
 
-When mac is not in use e.g. while travelling
-When your mac is not with you
+This program removes the worry of forgetting to charge your mac. If you've ever had an event or activity planned for which your mac is required, only to find that your mac is out of battery, this program is for you
+
+Intended use-cases: 
+
+* When mac is not in use e.g. while travelling
+
+* When your mac is not with you
 
 Features:
 
-Support for two battery threshold levels
-Check for wifi connection to ensure message is sent
-Check for conditions where program should not run (charging and idle time)
-Display is slept to conserve battery
-Mac sleeps after reaching second threshold to conserve battery
+* Support for two battery threshold levels
+
+* Check for wifi connection to ensure message is sent
+
+* Check for conditions where program should not run (charging and idle time)
+
+* Display is slept to conserve battery
+
+* Mac sleeps after reaching second threshold to conserve battery
 
 Instructions:
 
