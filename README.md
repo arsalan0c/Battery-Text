@@ -23,7 +23,7 @@ Features:
 
 * Mac sleeps after reaching second threshold to conserve battery
 
-Instructions:
+INSTRUCTIONS:
 
 Step 1: In BatteryText.sh, look for code that marked by comments with a capitalized letter (A-C) in the following functions: "wifi", "main" and "exitSet"
 
